@@ -20,13 +20,13 @@ namespace ConsoleApp2
         {
             driver.Navigate().GoToUrl("https://rahulshettyacademy.com/AutomationPractice/");
             // Console.WriteLine("Hello World!");
-            //excerciseone();
-            //excercisetwo();
+            excerciseone();
+            excercisetwo();
              excercise5();
-            //switchTab();
-            //excercisefour();
-            //excercisenine();
-             // excerciseten();
+            switchTab();
+            excercisefour();
+            excercisenine();
+              excerciseten();
 
 
 
@@ -136,7 +136,9 @@ namespace ConsoleApp2
             IWebElement switchwind = driver.FindElement(By.Id("openwindow"));
             switchwind.Click();
             Thread.Sleep(3000);
-            driver.SwitchTo().Window(driver.WindowHandles[0]);
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
+            driver.SwitchTo().Window(driver.WindowHandles[0])
         }
 
         public static void switchTab()
@@ -144,6 +146,8 @@ namespace ConsoleApp2
             IWebElement switchtab = driver.FindElement(By.Id("opentab"));
             switchtab.Click();
             Thread.Sleep(3000);
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
         }
 
